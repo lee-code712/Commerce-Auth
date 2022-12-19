@@ -28,7 +28,7 @@ dependencies {
 	// external jar files
 	implementation fileTree(dir: 'libs', include: ['*.jar'])
 	
-	//implementation project(':Commerce-Common:lib')
+	implementation project(':Commerce-Common:lib')
 }
 
 tasks.named('test') {
