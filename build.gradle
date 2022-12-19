@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java'
+}
+
+group = 'com.digital'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	// openAPI - swagger
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+	implementation group: 'io.swagger.core.v3', name: 'swagger-core', version: '2.1.10'
+	
+	// lombok
+	compileOnly("org.projectlombok:lombok:1.18.10")
+	annotationProcessor("org.projectlombok:lombok:1.18.10")
+	
+	// external jar files
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+	
+	//implementation project(':Commerce-Common:lib')
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
