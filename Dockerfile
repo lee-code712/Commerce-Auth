@@ -18,4 +18,4 @@ WORKDIR /app/Commerce-Auth
 RUN cd /app/Commerce-Auth
 RUN gradle build
 
-CMD ["java", "-Djennifer.config=/app/agent.java/conf/auth.conf","-javaagent:/app/agent.java/jennifer.jar", "-jar", "/app/Commerce-Auth/build/libs/Commerce-Auth-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-Djennifer.config=/app/agent.java/conf/auth-v2.conf","-javaagent:/app/agent.java/jennifer.jar", "-jar", "/app/Commerce-Auth/build/libs/Commerce-Auth-0.0.1-SNAPSHOT.jar"]
