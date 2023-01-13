@@ -49,8 +49,8 @@ pipeline {
       steps {
         script {
           echo "Deploy App START"
-          sh "${KC} apply -f auth_deployment_v2.yaml"
-          sh "${KC} set image deployment/commerce-yr-auth-v2 commerce-yr-auth=${IMG}:auth-${BUILD_NUMBER} -n commerce-yr"
+          sh "${KC} apply -f auth_deployment.yaml"
+          sh "${KC} set image deployment/commerce-yr-auth commerce-yr-auth=${IMG}:auth-${BUILD_NUMBER} -n commerce-yr"
           echo "Deploy App END"
         }
       }
