@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   annotations:
     acornsoft.io/workload-group-no: "2"
-  generation: 2
+  generation: 1
   name: commerce-yr-auth
   namespace: commerce-yr
 spec:
@@ -27,9 +27,6 @@ spec:
       - image: 192.168.100.12/commerce-yr/commerce-yr-auth-img:auth-1
         imagePullPolicy: Always
         name: commerce-yr-auth
-        ports:
-        - containerPort: 8080
-          protocol: TCP
         resources:
           limits:
             cpu: 200m
